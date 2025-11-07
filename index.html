@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Versículo del Día</title>
+  <style>
+    body {
+      font-family: Georgia, serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fdfdfd;
+    }
+    #versiculo-widget {
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #versiculo-texto {
+      font-size: 20px;
+    }
+    #versiculo-referencia {
+      margin-top: 8px;
+      font-weight: bold;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div id="versiculo-widget">
+    <div id="versiculo-texto"></div>
+    <div id="versiculo-referencia"></div>
+  </div>
+
+  <script>
+    // Lista de tus versículos
+    const versiculos = [
+      {texto: "Porque de tal manera amó Dios al mundo...", referencia: "Juan 3:16"},
+      {texto: "El Señor es mi pastor; nada me faltará.", referencia: "Salmo 23:1"},
+      {texto: "Todo lo puedo en Cristo que me fortalece.", referencia: "Filipenses 4:13"},
+      {texto: "El que habita al abrigo del Altísimo...", referencia: "Salmo 91:1"},
+      {texto: "Mas buscad primeramente el reino de Dios...", referencia: "Mateo 6:33"},
+      {texto: "No temas, porque yo estoy contigo.", referencia: "Isaías 41:10"},
+      {texto: "Jehová es mi luz y mi salvación...", referencia: "Salmo 27:1"},
+      {texto: "Amarás a tu prójimo como a ti mismo.", referencia: "Mateo 22:39"},
+      {texto: "El Señor es mi roca, mi fortaleza y mi libertador.", referencia: "Salmo 18:2"},
+      {texto: "Jehová es bueno, es refugio en el día de angustia.", referencia: "Nahúm 1:7"},
+      {texto: "Sed fuertes y valientes.", referencia: "Josué 1:9"},
+      {texto: "La fe es la certeza de lo que se espera.", referencia: "Hebreos 11:1"},
+      {texto: "Clama a mí y yo te responderé.", referencia: "Jeremías 33:3"},
+      {texto: "Conócelo y hallarás vida.", referencia: "Proverbios 8:35"}
+    ];
+
+    // Calcular índice según el día del mes
+    const index = (new Date().getDate() - 1) % versiculos.length;
+
+    // Mostrar versículo del día
+    document.getElementById("versiculo-texto").innerText = versiculos[index].texto;
+    document.getElementById("versiculo-referencia").innerText = versiculos[index].referencia;
+  </script>
+</body>
+</html>
